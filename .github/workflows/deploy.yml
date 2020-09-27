@@ -15,4 +15,4 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: rsync deploy
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./* tascplus@sv10393.xserver.jp:/home/tascplus/speedloger.com/public_html/html5/ --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./dist/* tascplus@sv10393.xserver.jp:/home/tascplus/speedloger.com/public_html/html5/ --exclude .htaccess
